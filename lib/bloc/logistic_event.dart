@@ -13,11 +13,3 @@ class GetInventryResponse extends LogisticEvent {
   @override
   List<Object> get props => [];
 }
-
-class GetItemsDetails extends LogisticEvent {
-  final int indexOfCard;
-  const GetItemsDetails({required this.indexOfCard});
-
-  @override
-  List<Object> get props => [indexOfCard];
-}

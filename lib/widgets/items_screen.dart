@@ -52,6 +52,20 @@ class ItemsPage extends StatelessWidget {
               unselectedLabelColor: Colors.grey,
               tabs: [_buildTab(tabText: 'Items'), _buildTab(tabText: 'Floor Info'), _buildTab(tabText: 'Send Quote')]),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          currentIndex: 1,
+          selectedItemColor: Colors.redAccent,
+          unselectedItemColor: Colors.grey,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.leaderboard), label: 'Leads'),
+            BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: 'Tasks'),
+            BottomNavigationBarItem(icon: Icon(Icons.report), label: 'Reports'),
+            BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
+          ],
+        ),
         body: TabBarView(children: [
           ItemsTab(inventoryDetails: inventoryDetails),
           FloorInfoTab(),
@@ -64,6 +78,7 @@ class ItemsPage extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class ItemsTab extends StatelessWidget {
   List<InventoryDetails> inventoryDetails;
   ItemsTab({super.key, required this.inventoryDetails});
